@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-sm-12">
+		<form class="navbar-form navbar-left" role="search">
+  			<div class="form-group">
+    			<input type="text" class="form-control" placeholder="Search" ng-model="search">
+  			</div>
+		</form>
+		<table class="table table-striped">
+		  <tr>
+		    <th><input type="checkbox" ></th>
+		    <th></th>
+		    <th>id</th>
+		    <th>example</th>
+		    <th>learned</th>
+		  </tr>
+		  <tr ng-repeat="word in words | filter:search">
+		    <td><input type="checkbox"></td>
+		    <td> </td>
+		    <td>{{word.value}}</td>
+		    <td>{{word.example}} </td>
+		    <td><span class="badge"> </span></td>
+		  </tr>
+		</table>
+	</div>
+</div>

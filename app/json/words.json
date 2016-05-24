@@ -1,0 +1,64 @@
+[
+
+    {
+        "value": "cat",
+        "id": "1",
+        "example": "cat is black",
+        "img": "cat.png"
+    },
+    {
+        "value": "dog",
+        "id": "2",
+        "example": "dog is black",
+        "img": "dog.png"
+    },
+    {
+        "value": "frog",
+        "id": "3",
+        "example": "frog is green",
+        "img": "frog.png"
+    },
+    {
+        "value": "fox",
+        "id": "4",
+        "example": "fox is red",
+        "img": "fox.png"
+    },
+    {
+        "value": "duck",
+        "id": "5",
+        "example": "duck is gray",
+        "img": "duck.png"
+    },
+    {
+        "value": "wolf",
+        "id": "6",
+        "example": "wolf is gray",
+        "img": "wolf.png"
+    },
+    {
+        "value": "lion",
+        "id": "7",
+        "example": "lion is gray",
+        "img": "lion.png"
+    },
+    {
+        "value": "tiger",
+        "id": "8",
+        "example": "tiger is red",
+        "img": "tiger.png"
+    },
+    {
+        "value": "alligator",
+        "id": "9",
+        "example": "alligator is gray",
+        "img": "alligator.png"
+    },
+    {
+        "value": "giraffe",
+        "id": "10",
+        "example": "giraffe is gray",
+        "img": "giraffe.png"
+    }
+
+]
