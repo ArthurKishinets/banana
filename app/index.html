@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html >
 <html class="no-js" ng-app="bananaApp">
   <head>
     <meta charset="utf-8">
@@ -11,19 +11,22 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body>
+  <body ng-cloak>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
     <div class="header">
-      <div class="navbar navbar-default" role="navigation">
+      <div class="navbar" role="navigation">
         <div class="container">
           <div class="navbar-header">
             
@@ -35,7 +38,7 @@
             </button>
 
             <a class="navbar-brand" href="#/">
-              <img alt="Brand" src="../images/banana50.png">
+              <img alt="Brand" src="../images/banana80.png">
             </a>
             <a class="navbar-brand" href="#/">banana</a>
 
@@ -46,7 +49,7 @@
             <ul class="nav navbar-nav">
               <li><a href="#/">Home</a></li>
               <li><a ng-href="#/dictionary">Dictionary</a></li>
-              <li><a ng-href="#/">Training</a></li>
+              <li><a ng-href="#/training">Training</a></li>
               <li><a ng-href="#/materials">Materials</a></li>
               <li><a ng-href="#/">Grammar</a></li>
             </ul>
@@ -56,7 +59,7 @@
     </div>
 
     <div class="container">
-    <div ng-view=""></div>
+      <div ng-view="" class="inner"></div>
     </div>
 
     <div class="footer">
@@ -79,9 +82,7 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-
     <script src="bower_components/angular/angular.js"></script>
-
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -96,6 +97,9 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/dictionary.js"></script>
         <script src="scripts/controllers/materials.js"></script>
+        <script src="scripts/directives/mymodal.js"></script>
+        <script src="scripts/controllers/training.js"></script>
+        <script src="scripts/controllers/translatefrom.js"></script>
         <!-- endbuild -->
 </body>
 </html>

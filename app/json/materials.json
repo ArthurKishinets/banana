@@ -16,49 +16,7 @@
         "name": "In Brief: Wildlife Safaris in Nepal; New Trails in California",
         "id": "3",
         "text": "Nepal may be known for being home to Mount Everest, but its wildlife is an attraction as much as the snow peaks. A new lodge from the Mumbai, India-based Taj Safaris, Meghauli Serai, is situated in Chitwan National Park in south-central Nepal and has 30 rooms and an infinity pool overlooking the Rapti River. The park is home to 550 native bird species including the great hornbill and more than 60 species of mammals such as leopards, wild dogs and Bengal tigers; a greater one-horned rhinoceros is also a big draw. In addition to safaris, guests have the option to take guided jungle walks, canoe on the Rapti River and hike in the Himalayan foothills. Prices from $535 per person, per day, including meals and most activities. In time for the American Hiking Society’s National Trails Day, June 4, Mendocino County in Northern California will open two new hiking trails. The 2.3-mile Peter Douglas Coastal Trail routes hikers through redwood groves known as Shady Dell featuring trees with branches that have split off into candelabra shapes. The land, just south of Sinkyone Wilderness State Park, is owned by the nonprofit Save the Redwoods League.",
-        "img": "frog.png"
-    },
-    {
-        "name": "fox",
-        "id": "4",
-        "text": "fox is red",
-        "img": "fox.png"
-    },
-    {
-        "name": "duck",
-        "id": "5",
-        "text": "duck is gray",
-        "img": "duck.png"
-    },
-    {
-        "name": "wolf",
-        "id": "6",
-        "text": "wolf is gray",
-        "img": "wolf.png"
-    },
-    {
-        "name": "lion",
-        "id": "7",
-        "text": "lion is gray",
-        "img": "lion.png"
-    },
-    {
-        "name": "tiger",
-        "id": "8",
-        "text": "tiger is red",
-        "img": "tiger.png"
-    },
-    {
-        "name": "alligator",
-        "id": "9",
-        "text": "alligator is gray",
-        "img": "alligator.png"
-    },
-    {
-        "name": "giraffe",
-        "id": "10",
-        "text": "giraffe is gray",
-        "img": "giraffe.png"
+        "img": "3.png"
     }
 
 ]

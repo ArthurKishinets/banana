@@ -31,7 +31,41 @@ angular
         templateUrl: 'views/materials.html',
         controller: 'MaterialsCtrl'
       })
+      .when('/training', {
+        templateUrl: 'views/training.html',
+        controller: 'TrainingCtrl'
+      })
+      .when('/translateFrom', {
+        templateUrl: 'views/training/translateFrom.html',
+        controller: 'TranslatefromCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
+  }).run(function($http) {
+
+    window.words = [];
+
+    $http({
+      method: 'GET',
+      url: '../../json/words.json'
+    }).then(function success(response) {
+      words = response.data;
+    },
+    function error() {
+      console.log('no');
+    });
+
+    window.trainingOptions = [];
+
+    $http({
+      method: 'GET',
+      url: '../../json/trainingOptions.json'
+    }).then(function success(response) {
+      trainingOptions = response.data;
+    },
+    function error() {
+      console.log('no');
+    });
+
   });

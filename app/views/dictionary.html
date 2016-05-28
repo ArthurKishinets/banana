@@ -1,20 +1,22 @@
+<my-modal info="modalWord" ng-show="isModalShown" ng-click="toogleModal($event)" next="next" prev="previous"></my-modal>
+
 <div class="row">
 	<div class="col-sm-12">
 		<form class="navbar-form navbar-left" role="search">
   			<div class="form-group">
-    			<input type="text" class="form-control" placeholder="Search" ng-model="search">
+    			<input type="text" class="form-control" placeholder="search word" ng-model="search">
   			</div>
 		</form>
-		<table class="table table-striped">
+		<table class="table table-striped" ng-click="alert('lsl')">
 		  <tr>
 		    <th><input type="checkbox" ></th>
 		    <th></th>
-		    <th>id</th>
+		    <th>word</th>
 		    <th>example</th>
 		    <th>learned</th>
 		  </tr>
-		  <tr ng-repeat="word in words | filter:search">
-		    <td><input type="checkbox"></td>
+		  <tr ng-repeat="word in words | filter:search" ng-click="toogleModal()">
+		    <td><input type="checkbox" ng-click="$event.stopPropagation()"></td>
 		    <td> </td>
 		    <td>{{word.value}}</td>
 		    <td>{{word.example}} </td>

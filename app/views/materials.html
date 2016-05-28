@@ -1,4 +1,9 @@
-<p>This is the materials view.</p>
 
+<div class="row ng-cloak" ng-cloak >
+	<div class="material panel panel-success" ng-repeat="material in materials" >
+		<h2>{{material.name}}</h2>
+		<img ng-src="images/materials/{{material.img}}" class="container">
+		<p>{{material.text}}</p>
+	</div>
+</div>
 
-{{materials | json }}
