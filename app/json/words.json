@@ -6,6 +6,7 @@
         "example": "cat is black",
         "img": "cat.png",
         "translateFrom": false,
+        "translateInto": false,
         "translate": "кот"
     },
     {
@@ -14,6 +15,7 @@
         "example": "dog is black",
         "img": "dog.png",
         "translateFrom": false,
+        "translateInto": false,
         "translate": "собака"        
     },
     {
@@ -22,6 +24,7 @@
         "example": "frog is green",
         "img": "frog.png",
         "translateFrom": false,
+        "translateInto": false,
         "translate": "жаба"
     },
     {
@@ -30,6 +33,7 @@
         "example": "fox is red",
         "img": "fox.png",
         "translateFrom": false,
+        "translateInto": false,
         "translate": "лиса"
     },
     {
@@ -38,6 +42,7 @@
         "example": "duck is gray",
         "img": "duck.png",
         "translateFrom": false,
+        "translateInto": false,
         "translate": "утка"
     },
     {
@@ -46,6 +51,7 @@
         "example": "wolf is gray",
         "img": "wolf.png",
         "translateFrom": false,
+        "translateInto": false,
         "translate": "волк"
     },
     {
@@ -54,6 +60,7 @@
         "example": "lion is gray",
         "img": "lion.png",
         "translateFrom": false,
+        "translateInto": false,
         "translate": "лев"
     },
     {
@@ -62,6 +69,7 @@
         "example": "tiger is red",
         "img": "tiger.png",
         "translateFrom": false,
+        "translateInto": false,
         "translate": "тигр"
     },
     {
@@ -70,6 +78,7 @@
         "example": "alligator is gray",
         "img": "alligator.png",
         "translateFrom": false,
+        "translateInto": false,
         "translate": "крокодил"
     },
     {
@@ -78,6 +87,7 @@
         "example": "giraffe is gray",
         "img": "giraffe.png",
         "translateFrom": false,
+        "translateInto": false,
         "translate": "жираф"
     }
 

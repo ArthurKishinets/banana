@@ -8,10 +8,10 @@
  * Controller of the bananaApp
  */
 angular.module('bananaApp')
-  .controller('TrainingCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate2',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('TrainingCtrl', [ '$scope', 'wordsToTrain', function ($scope, wordsToTrain) {
+
+  	//$scope.count = wordsToTrain();
+  	wordsToTrain();
+  	//console.log($scope.count);
+
+  }]);

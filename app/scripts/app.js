@@ -36,8 +36,12 @@ angular
         controller: 'TrainingCtrl'
       })
       .when('/translateFrom', {
-        templateUrl: 'views/training/translateFrom.html',
+        templateUrl: 'views/training/translatefrom.html',
         controller: 'TranslatefromCtrl'
+      })
+      .when('/translateInto', {
+        templateUrl: 'views/training/translateInto.html',
+        controller: 'TranslateintoCtrl'
       })
       .otherwise({
         redirectTo: '/'

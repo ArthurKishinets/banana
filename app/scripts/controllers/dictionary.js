@@ -9,22 +9,13 @@
  */
 angular.module('bananaApp')
   .controller('DictCtrl', ['$scope', '$http', function ($scope, $http) {
-    $scope.words = window.words, $scope.modalWord = {}, $scope.isModalShown = false;
+    $scope.modalWord = {}, $scope.isModalShown = false;
     var wordIndex = 0;
-    /*$http({
-  		method: 'GET',
-  		url: '../../json/words.json'
-  	}).then(function success(response) {
-  		//alert('yes');
-  		$scope.words = response.data;
-      $scope.modalWord = $scope.words[0];
-  		console.log($scope.modalWord);
-  	},
-  	function error() {
-  		console.log('no');
-  	});*/
+
+    $scope.words = JSON.parse(localStorage.words);
 
     $scope.toogleModal = function($event) {
+
       $scope.isModalShown = !$scope.isModalShown;
 
     };

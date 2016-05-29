@@ -2,15 +2,14 @@
 
 /**
  * @ngdoc function
- * @name bananaApp.controller:TranslatefromCtrl
+ * @name bananaApp.controller:TranslateintoCtrl
  * @description
- * # TranslatefromCtrl
+ * # TranslateintoCtrl
  * Controller of the bananaApp
  */
-
 angular.module('bananaApp')
-  .controller('TranslatefromCtrl', function ($scope) {
-
+  .controller('TranslateintoCtrl', function ($scope) {
+    
   	$scope.words = JSON.parse(localStorage.words), $scope.wordsToTrain = []; 
 
   	var index = 0, beenClicked = 0, currentWord = 0;
@@ -19,7 +18,7 @@ angular.module('bananaApp')
 
 	  	for(var i = 0; i < $scope.words.length; i++) {
 	  		// if word doesn`t have this training completed we add it to training list
-	  		if ( $scope.words[i].translateFrom === false ) {
+	  		if ( $scope.words[i].translateInto === false ) {
 
 	  			$scope.wordsToTrain.push($scope.words[i]);
 
@@ -27,6 +26,10 @@ angular.module('bananaApp')
 	  	}
 
 	  	console.log($scope.wordsToTrain);
+
+	  	/*if( $scope.wordsToTrain.length === 0 ) {
+  			return false;
+  		}*/
 
     }());
 
@@ -36,26 +39,26 @@ angular.module('bananaApp')
     // get unique options to choose 
     function getOptions() {
     	
-    	var previous = {}, i = 0, rightOption = $scope.currentWord.translate;
+    	var previous = {}, i = 0, rightOption = $scope.currentWord.value;
 
     	while($scope.options.length !== 5) {
 
     		index = Math.floor(Math.random(0, 1)*11);
 
     		// make sure we aren`t adding the right answer to options (we will do it later)
-    		var possibleOpt = window.trainingOptions[index].slice(0, trainingOptions[index].indexOf('-'));
+    		var possibleOpt = window.trainingOptions[index].slice(trainingOptions[index].indexOf('-') + 1);
     		
     		//console.log($scope.currentWord.value)
 
     		// if we do than skip the rest of loop
-    		if (possibleOpt === $scope.currentWord.value)
+    		if (possibleOpt === $scope.currentWord.translate)
     			continue;
 
     		// if we have`t added this option already
     		if ( !previous.hasOwnProperty(index) ) {
 
     			//before we add word to training we cut off the translate part of the string
-    			$scope.options[i++] = window.trainingOptions[index].slice(trainingOptions[index].indexOf('-') + 1);
+    			$scope.options[i++] = window.trainingOptions[index].slice(0, trainingOptions[index].indexOf('-'));
     			previous[index] = 1;
 
     		}
@@ -66,7 +69,7 @@ angular.module('bananaApp')
 
     	index = Math.floor(Math.random(0, 1)*5);
   
-    	$scope.options[index] = $scope.currentWord.translate;
+    	$scope.options[index] = $scope.currentWord.value;
 
 
 
@@ -98,9 +101,9 @@ angular.module('bananaApp')
 
     	// if the right answer was choosen
 
-    	if ( $event.delegateTarget.outerText == $scope.currentWord.translate ) {
+    	if ( $event.delegateTarget.outerText == $scope.currentWord.value ) {
 
-    		$scope.currentWord.translateFrom = true;
+    		$scope.currentWord.translateInto = true;
 
 	    	$(event.target).addClass('green');
 
@@ -175,7 +178,7 @@ angular.module('bananaApp')
 
     	for ( var i = 0; i < $scope.wordsToTrain.length; i++ ) {
 
-    		if ( $scope.wordsToTrain[i].translateFrom ) {
+    		if ( $scope.wordsToTrain[i].translateInto ) {
     			$scope.rightAnswers.push($scope.wordsToTrain[i]);
     		}
 
@@ -190,11 +193,18 @@ angular.module('bananaApp')
     	save();
 
     };
-
+    
     function save() {
+
+    	console.log($scope.words);
+
+    	console.log($scope.wordsToTrain);
+
+    	console.log($scope.words === $scope.wordsToTrain);
 
     	localStorage.words = JSON.stringify($scope.words);
 
     };
-    
+	//console.log($scope.rightAnswers.length);
+
   });
