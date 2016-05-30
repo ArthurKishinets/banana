@@ -13,7 +13,7 @@ angular.module('bananaApp')
 
   	$scope.words = JSON.parse(localStorage.words), $scope.wordsToTrain = []; 
 
-  	var index = 0, beenClicked = 0, currentWord = 0;
+  	var index = 0, beenClicked = 0, currentWord = 0, trainingOptions = JSON.parse(localStorage.trainingOptions);
 
   	(function getWords() {
 
@@ -43,7 +43,7 @@ angular.module('bananaApp')
     		index = Math.floor(Math.random(0, 1)*11);
 
     		// make sure we aren`t adding the right answer to options (we will do it later)
-    		var possibleOpt = window.trainingOptions[index].slice(0, trainingOptions[index].indexOf('-'));
+    		var possibleOpt = trainingOptions[index].slice(0, trainingOptions[index].indexOf('-'));
     		
     		//console.log($scope.currentWord.value)
 
@@ -55,7 +55,7 @@ angular.module('bananaApp')
     		if ( !previous.hasOwnProperty(index) ) {
 
     			//before we add word to training we cut off the translate part of the string
-    			$scope.options[i++] = window.trainingOptions[index].slice(trainingOptions[index].indexOf('-') + 1);
+    			$scope.options[i++] = trainingOptions[index].slice(trainingOptions[index].indexOf('-') + 1);
     			previous[index] = 1;
 
     		}

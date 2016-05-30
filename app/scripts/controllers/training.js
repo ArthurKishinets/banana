@@ -7,11 +7,15 @@
  * # TrainingCtrl
  * Controller of the bananaApp
  */
+
 angular.module('bananaApp')
   .controller('TrainingCtrl', [ '$scope', 'wordsToTrain', function ($scope, wordsToTrain) {
 
-  	//$scope.count = wordsToTrain();
-  	wordsToTrain();
-  	//console.log($scope.count);
+  	console.log(wordsToTrain('translateFrom').wordsToTrain);
+  	wordsToTrain('translateInto').wordsToTrain;
+  	wordsToTrain('translateInto').disabled();
+
+  	console.log(wordsToTrain('translateFrom').wordsToTrain);
+  	wordsToTrain('translateInto').wordsToTrain;
 
   }]);

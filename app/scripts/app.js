@@ -54,19 +54,19 @@ angular
       method: 'GET',
       url: '../../json/words.json'
     }).then(function success(response) {
-      words = response.data;
+      localStorage.words = JSON.stringify(response.data);
     },
     function error() {
       console.log('no');
     });
 
-    window.trainingOptions = [];
+    /*window.trainingOptions = [];*/
 
     $http({
       method: 'GET',
       url: '../../json/trainingOptions.json'
     }).then(function success(response) {
-      trainingOptions = response.data;
+      localStorage.trainingOptions = JSON.stringify(response.data);
     },
     function error() {
       console.log('no');
