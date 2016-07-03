@@ -12,10 +12,13 @@ angular.module('bananaApp')
   .controller('TrainingCtrl', [ '$scope', 'wordsToTrain', function ($scope, wordsToTrain) {
 
   	console.log(wordsToTrain('translateFrom').wordsToTrain);
-  	wordsToTrain('translateInto').wordsToTrain;
-  	wordsToTrain('translateInto').disabled();
+  	wordsToTrain('translateFrom').wordsToTrain;
+  	wordsToTrain('translateFrom').disabled();
 
   	console.log(wordsToTrain('translateFrom').wordsToTrain);
   	wordsToTrain('translateInto').wordsToTrain;
+  	wordsToTrain('translateInto').disabled();
+
+  	
 
   }]);

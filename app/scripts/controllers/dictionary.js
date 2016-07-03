@@ -8,7 +8,7 @@
  * Controller of the bananaApp
  */
 angular.module('bananaApp')
-  .controller('DictCtrl', ['$scope', '$http', function ($scope, $http) {
+  .controller('DictCtrl', ['$scope', '$http', 'dictionary', function ($scope, $http, dictionary) {
     $scope.modalWord = {}, $scope.isModalShown = false;
     var wordIndex = 0;
 
@@ -33,6 +33,12 @@ angular.module('bananaApp')
       }
       $scope.modalWord = $scope.words[--wordIndex];
 
-    }
+    };
+
+    $scope.chooseWord = dictionary.chooseWord;
+
+    $scope.addWords = dictionary.addWords;
+
+    $scope.checkAll = dictionary.checkAll;
 
   }]);

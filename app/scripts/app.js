@@ -43,25 +43,41 @@ angular
         templateUrl: 'views/training/translateInto.html',
         controller: 'TranslateintoCtrl'
       })
+      .when('/translatefromtest', {
+        templateUrl: 'views/training/translatefromtest.html',
+        controller: 'TranslatefromtestCtrl'
+      })
+      .when('/myroute', {
+        templateUrl: 'views/myroute.html',
+        controller: 'MyrouteCtrl'
+      })
+      .when('/trainingCart', {
+        templateUrl: 'views/trainingcart.html',
+        controller: 'TrainingcartCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
   }).run(function($http) {
 
-    window.words = [];
+    /*window.words = [];*/
 
-    $http({
-      method: 'GET',
-      url: '../../json/words.json'
-    }).then(function success(response) {
-      localStorage.words = JSON.stringify(response.data);
-    },
-    function error() {
-      console.log('no');
-    });
+    if( !localStorage.words ) {
+      $http({
+        method: 'GET',
+        url: '../../json/words.json'
+      }).then(function success(response) {
+        localStorage.words = JSON.stringify(response.data);
+      },
+      function error() {
+        console.log('no');
+      });
+    }
+      
 
     /*window.trainingOptions = [];*/
 
+    if ( !localStorage.trainingOptions ) {
     $http({
       method: 'GET',
       url: '../../json/trainingOptions.json'
@@ -71,5 +87,8 @@ angular
     function error() {
       console.log('no');
     });
+    }
+
+    
 
   });

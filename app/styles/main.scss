@@ -311,6 +311,30 @@ form.navbar-form {
   }
 }
 
+
+.trainingcart {
+    padding: 30px 0 10px 0;
+    width: 90%;
+    margin: 50px auto 0 auto;
+  .inlbutton {
+    display: inline-block;
+  }
+  .inlbutton a {
+    padding: 10px 14px;
+  }
+  .word {
+    width: 80%;
+    max-height: 260px;
+    height: 250px;
+    margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+}
+
+
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {

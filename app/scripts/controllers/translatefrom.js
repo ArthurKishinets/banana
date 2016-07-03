@@ -9,7 +9,9 @@
  */
 
 angular.module('bananaApp')
-  .controller('TranslatefromCtrl', function ($scope) {
+  .controller('TranslatefromCtrl', [ '$scope', 'wordsToTrain', 'translate', function ($scope, wordsToTrain, translate) {
+
+    console.log(translate);
 
   	$scope.words = JSON.parse(localStorage.words), $scope.wordsToTrain = []; 
 
@@ -114,6 +116,8 @@ angular.module('bananaApp')
 
     	else {
 
+            $scope.currentWord.translateFrom = false;
+
     		$(event.target).addClass('red');
 
     		$('.answers span.ans' + index).addClass(
@@ -197,4 +201,4 @@ angular.module('bananaApp')
 
     };
     
-  });
+  }]);

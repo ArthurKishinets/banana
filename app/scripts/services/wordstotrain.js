@@ -12,11 +12,10 @@
  angular.module('bananaApp')
   .factory('wordsToTrain', function () {
 
-  	return function(training) {
+  	return function(training) {  		
 
-  		// make sure training name is string
-
-  		var words = JSON.parse(localStorage.words), wordsToTrain = [];
+  		var words = JSON.parse(localStorage.words) || [];
+  		var wordsToTrain = [];
 
   		// if we not out of words
 		for( var i = 0; i < words.length; i++ ) {
@@ -29,7 +28,7 @@
 
 		}
 
-		console.log($(training).selector);
+		//console.log($(training).selector);
 
 		function disabled() {
 

@@ -12,12 +12,12 @@ angular.module('bananaApp')
       template: '<span class="badge"> </span>',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
-        if ( scope.word.translateFrom && scope.word.translateInto ) {
+        if ( scope.word.translateFrom && scope.word.translateInto && scope.word.trainingCart) {
         	element.find('span').css({
         		"backgroundColor": "green"
         	});
         }
-        else if ( scope.word.translateFrom || scope.word.translateInto ) {
+        else if ( scope.word.translateFrom || scope.word.translateInto || scope.word.trainingCart) {
         	element.find('span').css({
         		"backgroundColor": "yellow"
         	});

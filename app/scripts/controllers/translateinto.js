@@ -117,6 +117,8 @@ angular.module('bananaApp')
 
     	else {
 
+            $scope.currentWord.translateInto = false;
+
     		$(event.target).addClass('red');
 
     		$('.answers span.ans' + index).addClass(

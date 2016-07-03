@@ -22,4 +22,19 @@ angular.module('bananaApp')
   	function error() {
   		console.log('no');
   	});
+
+var url = 'http://content.guardianapis.com/search?order-by=newest&q=literature%20books&show-blocks=all&api-key=test';
+
+$.ajax({
+  url: url,
+  method: 'GET',
+}).done(function(result) {
+  console.log(result);
+}).fail(function(err) {
+  throw err;
+});
+
   }]);
+
+
+

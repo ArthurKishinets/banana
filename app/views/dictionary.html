@@ -5,18 +5,19 @@
 		<form class="navbar-form navbar-left" role="search">
   			<div class="form-group">
     			<input type="text" class="form-control" placeholder="search word" ng-model="search">
+    			<button type="button" class="btn btn-success" ng-click="addWords($event)">Send to trainings</button>
   			</div>
 		</form>
 		<table class="table table-striped" ng-click="alert('lsl')">
 		  <tr>
-		    <th><input type="checkbox" ></th>
+		    <th><input type="checkbox" ng-click="checkAll()"></th>
 		    <th></th>
 		    <th>word</th>
 		    <th>example</th>
 		    <th>learned</th>
 		  </tr>
 		  <tr ng-repeat="word in words | filter:search" ng-click="toogleModal()">
-		    <td><input type="checkbox" ng-click="$event.stopPropagation()"></td>
+		    <td><input type="checkbox" ng-click="$event.stopPropagation(); chooseWord($event, $index)"></td>
 		    <td> </td>
 		    <td>{{word.value}}</td>
 		    <td>{{word.example}} </td>
