@@ -20,11 +20,11 @@
 		    <th>word</th>
 		    <th>learned</th>
 		  </tr>
-		  <tr ng-repeat="word in rightAnswerArr track by word.id" class="rightAnswers">
+		  <tr ng-repeat="word in rightAnswerArr" class="rightAnswers">
 		    <td>{{word.value}}</td>
 		    <td><span class="badge"> </span></td>
 		  </tr>
-		  <tr ng-repeat="word in wrongAnswerArr track by word.id" class="wrongAnswers">
+		  <tr ng-repeat="word in wrongAnswerArr" class="wrongAnswers">
 		    <td>{{word.value}}</td>
 		    <td><span class="badge"> </span></td>
 		  </tr>

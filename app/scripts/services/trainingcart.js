@@ -8,106 +8,134 @@
  * Factory in the bananaApp.
  */
 angular.module('bananaApp')
-  .factory('trainingCart', [ 'wordsToTrain', '$interval', function (wordsToTrain, $interval) {
-    // Service logic
-    // ...
+	.factory('trainingCart', ['wordsToTrain', '$interval', function(wordsToTrain, $interval) {
+		// Service logic
+		// ...
 
-    var words = wordsToTrain('trainingCart').wordsToTrain, index = 0, allwords = JSON.parse(localStorage.words);
-    var index = 0, currentWord = words[index];
-    var rightAnswerArr = [], wrongAnswerArr = [], showResults = false, showExerciseBox = true;
+		var words = wordsToTrain('trainingCart').wordsToTrain,
+			index = 0,
+			allwords = JSON.parse(localStorage.words);
+		var index = 0,
+			currentWord = words[index];
+		var rightAnswerArr = [],
+			wrongAnswerArr = [],
+			showResults = false,
+			showExerciseBox = true;
 
-    function init() {
+		function init() {
 
-      // get words to train
-      words = wordsToTrain('trainingCart').wordsToTrain;
-      currentWord = words[index];
+			// get words to train
+			words = wordsToTrain('trainingCart').wordsToTrain;
+			index = 0, rightAnswerArr = [], wrongAnswerArr = [];
+			currentWord = words[index];
 
-      showResults = false;
-      showExerciseBox = true;
+			console.log('words');
+			console.log(rightAnswerArr, wrongAnswerArr);
 
-    };
+			showResults = false;
+			showExerciseBox = true;
 
-    // get next pic
-    var nextPic = function() {
+		};
 
-      $('.word').css({
-        'background-image': 'url(images/words/' + currentWord.img +')'
-      });
+		// get next pic
+		var nextPic = function() {
 
-    };
+			$('.word').css({
+				'background-image': 'url(images/words/' + currentWord.img + ')'
+			});
 
-    // save results to localStorage
-    function save() {
+		};
 
-      for( var i = 0; i < words.length; i++ ) {
-        for( var j = 0; j < allwords.length; j++ ) {
-          if( words[i].id === allwords[j].id ) {
-            allwords[j] = angular.copy(words[i]);
-          }
-        }
-      }
+		// save results to localStorage
+		function save() {
 
-      localStorage.words = JSON.stringify(allwords);
-    }
+			for (var i = 0; i < words.length; i++) {
+				for (var j = 0; j < allwords.length; j++) {
+					if (words[i].id === allwords[j].id) {
+						allwords[j] = angular.copy(words[i]);
+					}
+				}
+			}
 
-    // hide training and show results
-    var getResults = function() {
-      showResults = !showResults;
-      showExerciseBox = !showExerciseBox;
-      save();
-    };
+			localStorage.words = JSON.stringify(allwords);
+		}
 
-    // get next word
-    var nextWord = function() {
+		// hide training and show results
+		var getResults = function() {
+			index = 0;
+			showResults = !showResults;
+			showExerciseBox = !showExerciseBox;
 
-      if ( (index + 1) < words.length ) {
-        currentWord = words[++index];
-      }
-      else {
-        getResults();
-      }
-    };
+			//console.log('words length result', words.length, wrongAnswerArr);
+			/*for ( var i = 0; i < words.length; i++ ) {
+				console.log(i);
+				if (words[i].trainingCart) {
+					rightAnswerArr.push(words[i]);
+				}
 
-    // if we know the word
-    var rightAnswer = function() {
+				else if (!words[i].trainingCart) {
+					wrongAnswerArr.push(words[i]);
+				}
 
-      currentWord['trainingCart'] = true;
-      rightAnswerArr.push(currentWord);
-      nextWord();
-      nextPic();
-    };
+			}*/
 
-    // if we doesn`t know the word
-    var wrongAnswer = function() {
+			console.log('rightAnswerArr');
+			console.log(rightAnswerArr);
+			console.log('wrongAnswerArr');
+			console.log(wrongAnswerArr);
 
-      currentWord['trainingCart'] = false;
-      wrongAnswerArr.push(currentWord);
-      nextWord();
-      nextPic();
-    };
+			save();
+		};
 
-    // Public API here
-    return {
-      nextPic: nextPic,
-      init: init,
-      showExerciseBox: function() {
-        return showExerciseBox;
-      },
-      showResults: function() {
-        return showResults;
-      },
-      currentWord: function() {
-        return currentWord;
-      },
-      rightAnswer: rightAnswer,
-      wrongAnswer: wrongAnswer,
-      rightAnswerArr: function() {
-        return rightAnswerArr;
-      },
-      wrongAnswerArr: function() {
-        return wrongAnswerArr;
-      }
+		// get next word
+		var nextWord = function() {
+			if ((index + 1) < words.length) {
+				currentWord = words[++index];
+			} else {
+				getResults();
+			}
+		};
 
-    };
+		// if we know the word
+		var rightAnswer = function() {
 
-  }]);
+			currentWord['trainingCart'] = true;
+			rightAnswerArr.push(currentWord);
+			nextWord();
+			nextPic();
+		};
+
+		// if we doesn`t know the word
+		var wrongAnswer = function() {
+
+			currentWord['trainingCart'] = false;
+			wrongAnswerArr.push(currentWord);
+			nextWord();
+			nextPic();
+		};
+
+		// Public API here
+		return {
+			nextPic: nextPic,
+			init: init,
+			showExerciseBox: function() {
+				return showExerciseBox;
+			},
+			showResults: function() {
+				return showResults;
+			},
+			currentWord: function() {
+				return currentWord;
+			},
+			rightAnswer: rightAnswer,
+			wrongAnswer: wrongAnswer,
+			rightAnswerArr: function() {
+				return rightAnswerArr;
+			},
+			wrongAnswerArr: function() {
+				return wrongAnswerArr;
+			}
+
+		};
+
+	}]);

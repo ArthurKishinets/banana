@@ -16,7 +16,7 @@
 		    <th>example</th>
 		    <th>learned</th>
 		  </tr>
-		  <tr ng-repeat="word in words | filter:search" ng-click="toogleModal()">
+		  <tr ng-repeat="word in words | filter:search" ng-click="toogleModal(word)">
 		    <td><input type="checkbox" ng-click="$event.stopPropagation(); chooseWord($event, $index)"></td>
 		    <td> </td>
 		    <td>{{word.value}}</td>

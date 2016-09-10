@@ -17,6 +17,8 @@ angular.module('bananaApp')
     $scope.toogleModal = function($event) {
 
       $scope.isModalShown = !$scope.isModalShown;
+      $scope.modalWord = $event;
+      console.log('event', $event, 'word', $scope.modalWord);
 
     };
 
