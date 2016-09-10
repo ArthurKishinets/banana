@@ -1,0 +1,104 @@
+[
+
+    {
+        "value": "cat",
+        "id": "1",
+        "example": "cat is black",
+        "img": "cat.png",
+        "translateFrom": false,
+        "translateInto": false,
+        "trainingCart": false,
+        "translate": "кот"
+    },
+    {
+        "value": "dog",
+        "id": "2",
+        "example": "dog is black",
+        "img": "dog.png",
+        "translateFrom": false,
+        "translateInto": false,
+        "trainingCart": false,
+        "translate": "собака"        
+    },
+    {
+        "value": "frog",
+        "id": "3",
+        "example": "frog is green",
+        "img": "frog.png",
+        "translateFrom": false,
+        "translateInto": false,
+        "trainingCart": false,
+        "translate": "жаба"
+    },
+    {
+        "value": "fox",
+        "id": "4",
+        "example": "fox is red",
+        "img": "fox.png",
+        "translateFrom": false,
+        "translateInto": false,
+        "trainingCart": false,
+        "translate": "лиса"
+    },
+    {
+        "value": "duck",
+        "id": "5",
+        "example": "duck is gray",
+        "img": "duck.png",
+        "translateFrom": false,
+        "translateInto": false,
+        "trainingCart": false,
+        "translate": "утка"
+    },
+    {
+        "value": "wolf",
+        "id": "6",
+        "example": "wolf is gray",
+        "img": "wolf.png",
+        "translateFrom": false,
+        "translateInto": false,
+        "trainingCart": false,
+        "translate": "волк"
+    },
+    {
+        "value": "lion",
+        "id": "7",
+        "example": "lion is gray",
+        "img": "lion.png",
+        "translateFrom": false,
+        "translateInto": false,
+        "trainingCart": false,
+        "translate": "лев"
+    },
+    {
+        "value": "tiger",
+        "id": "8",
+        "example": "tiger is red",
+        "img": "tiger.png",
+        "translateFrom": false,
+        "translateInto": false,
+        "trainingCart": false,
+        "translate": "тигр"
+    },
+    {
+        "value": "alligator",
+        "id": "9",
+        "example": "alligator is gray",
+        "img": "alligator.png",
+        "translateFrom": false,
+        "translateInto": false,
+        "trainingCart": false,
+        "translate": "крокодил"
+    },
+    {
+        "value": "giraffe",
+        "id": "10",
+        "example": "giraffe is gray",
+        "img": "giraffe.png",
+        "translateFrom": false,
+        "translateInto": false,
+        "trainingCart": false,
+        "translate": "жираф"
+    }
+
+]
