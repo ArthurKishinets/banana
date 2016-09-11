@@ -40,7 +40,7 @@ angular
 				controller: 'TranslatefromCtrl'
 			})
 			.when('/translateInto', {
-				templateUrl: 'views/training/translateInto.html',
+				templateUrl: 'views/training/translateinto.html',
 				controller: 'TranslateintoCtrl'
 			})
 			.when('/translatefromtest', {
